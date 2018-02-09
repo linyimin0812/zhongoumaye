@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "target": "es6"
+      , "module": "commonjs"
+      , "declaration": true
+      , "sourceMap": true
+      , "noLib": false
+  
+      , "noEmitOnError": true
+      , "noUnusedLocals": true
+      , "noImplicitReturns": true
+      , "noFallthroughCasesInSwitch": true
+      , "strictNullChecks": true
+  
+      , "noImplicitAny": false
+      , "noUnusedParameters": false
+      , "noImplicitThis": false
+      , "traceResolution": false
+    }
+  }
+  
+  
