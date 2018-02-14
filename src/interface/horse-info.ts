@@ -9,5 +9,7 @@ export interface HorseInfo{
     withers: String,        // 马肩隆
     price: Number,          // 价格
     isXrayCheck: Boolean,   // X光检查通过
-    isDiagnosis: Boolean    // 通过诊断
+    isDiagnosis: Boolean,   // 通过诊断
+    type: String,           // 类型
+    createAt: Date          // 创建时间
 } 
