@@ -6,6 +6,7 @@ export interface User{
     contact: {
         tel: String,
         email: String
-    }
-    type: Number                // 用户类型
+    },
+    type: Number,           // 用户类型
+    createAt: Date          // 创建时间
 }
