@@ -4,8 +4,23 @@
   "description": "中欧马业",
   "main": "app.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=developer ts-node app.ts",
+    "start": "NODE_DENV=production ts-node-dev --respawn app.ts"
   },
   "author": "linyimin",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "config-lite": "^2.1.0",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "lodash": "^4.17.5",
+    "mongoose": "^5.0.4",
+    "optimist": "^0.6.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.11.1",
+    "@types/mongoose": "^5.0.2",
+    "@types/node": "^9.4.5",
+    "ts-node-dev": "^1.0.0-pre.13"
+  }
 }
