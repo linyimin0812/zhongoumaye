@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>文件上传</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <form id="uploadForm">
+            <input type="file" name="file" multiple>
+            <input type="button" value="上传" onclick="upload()">
+        </form>
+        <div class="container">
+            <div class="modal" id="progress-modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p class="modal-title">上传中...</p>
+                            <hr/>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 v <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" id="progress-bar" role="progressbar" style="width: 0%">   
+                                </div>
+                                <span id="progress-percentage" style="text-align:center;">0%</span>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" id="background-upload" onclick="backgroundUpload()" pull-right>后台上传</button>
+                                <button type="button" class="btn btn-danger" id="stop-upload" onclick="stopUpload()" >中止上传</button>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery-3.3.1.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            function upload(){
+                let formData = new FormData($("#uploadForm")[0]);
+                $.ajax({
+                    url:'http://localhost:8000/apis/uploads',
+                    type: 'POST',
+                    data: formData,
+                    async: true,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    xhr: function(){
+                            myXhr = $.ajaxSettings.xhr();
+                            if(myXhr.upload){
+                                $("#progress-modal").modal('show');
+                                myXhr.upload.addEventListener('progress',function(e) {
+                                    if (e.lengthComputable) {
+                                        var percent = Math.floor(e.loaded/e.total*100);
+                                        if(percent < 100) {
+                                            $("#progress-percentage").html(+percent+'%');
+                                            $('#progress-bar').attr('style', 'width: ' + percent + '%');
+                                            console.log(percent);
+                                        }else{
+                                            $("#progress-modal").modal('hide');
+                                        }
+                                    }
+                                }, false);
+                            }else{
+                                $("#progress-modal").modal('hide'); 
+                            }
+                            return myXhr;
+                        },
+                    success: function(data){
+
+                    },
+                    error: function(err){
+
+                    }
+                })
+            }
+            
+            function backgroundUpload(){
+                $('#progress-modal').modal('hide');
+            }
+            function stopUpload(){
+                $('#progress-modal').modal('hide');
+            }
+            let percent = 50;
+            setInterval(function(){
+                $("#progress-percentage").html(+percent+'%');
+                $('#progress-bar').attr('style', 'width: ' + percent + '%');
+                percent++;
+                if(percent > 100){
+                    percent = 50;
+                }
+            }, 500)
+        </script>
+        
+    </body>
+</html>
