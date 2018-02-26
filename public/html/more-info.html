@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>中欧马业</title>
+    <link href="../css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link rel="icon" href="../img/home.ico" type="image/x-ico" />
+    <style>
+        .glyphicon {
+            cursor: pointer;
+            border-radius: 2px;
+            border: 2px;
+            background-color: grey;
+            width: 100%
+        }
+
+        .row {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .row>[class*='col-'] {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .img-responsive0 {
+            cursor: pointer;
+            border-top: 2px;
+            border-top-style: solid;
+            border-top-width: 100%;
+            border-bottom: 2px;
+            border-bottom-style: solid;
+            border-bottom-width: 100%;
+            border-color: black;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            height: 100%;
+        }
+
+        .detailInfo,
+        .name,
+        .value {
+            border: 2px solid black;
+            font-size: 18px;
+        }
+
+        .name {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">中欧马业</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a class="contact" data-toggle="modal" data-target="#contactModal">联系人</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav navbar-right" id="isSignin" style="display:inline">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#signinModal">登录</a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#signupModal">注册</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" id="isSignout" style="display:none">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="welcom">你好</button>
+                            <div class="dropdown-content">
+                                <a onclick="signout()">退出</a>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron text-center">
+        <div class="container">
+            <h4>欢迎来到中欧马业!</h4>
+            <p>
+                <small>中国最专业最透明最放心的马匹交易平台</small>
+            </p>
+            <a href="#" class="btn btn-primary btn-xs">查看更多</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 text-center">
+                <div style="border-radius:10px;border:2px solid black;">
+                    <table style="width:100%;height:100%">
+                        <tr>
+                            <td style="text-align:center">
+                                <div class="embed-responsive embed-responsive-16by9 text-center ">
+                                    <iframe class="embed-responsive-item" id="videoDisplay" src="../uploads/horse.mp4"></iframe>
+                                    <img class="embed-responsive-item well-lg" id="pictureDisplay" src="../img/horse.jpg" style="display:none" />
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-2 text-center" style="margin: auto;">
+                <div style="border-radius:10px;border:2px solid black;">
+                    <table>
+                        <tr>
+                            <td>
+                                <span class="glyphicon glyphicon-menu-up" onclick="turnUp()" aria-hidden="true"></span>
+                                <div class="item">
+                                    <div class="img-responsive0" id="img-responsive1" style="display: none">
+                                        <img src="../img/horse.jpg" class="img-responsive" onclick="displayDetail(1)" id="picture1">
+                                    </div>
+                                    <div class="img-responsive0" id="img-responsive2" style="display: none">
+                                        <img src="../img/icon.png" class="img-responsive" onclick="displayDetail(2)" id="picture2">
+                                    </div>
+                                    <div class="img-responsive0" id="img-responsive3" style="display: none">
+                                        <img src="../img/horse.jpg" class="img-responsive" onclick="displayDetail(3)" id="picture3">
+                                    </div>
+                                    <div class="img-responsive0" id="img-responsive4" style="display: none">
+                                        <img src="../img/icon.png" class="img-responsive" onclick="displayDetail(4)" id="picture4">
+                                    </div>
+                                    <div class="img-responsive0" id="img-responsive5" style="display: none">
+                                        <img src="../img/horse.jpg" class="img-responsive" onclick="displayDetail(5)" id="picture5">
+                                    </div>
+                                    <div class="img-responsive0" id="img-responsive6" style="display: none">
+                                        <img src="../img/icon.png" class="img-responsive" onclick="displayDetail(6)" id="picture6">
+                                    </div>
+                                    <div class="img-responsive0" id="img-responsive7" style="display: block">
+                                        <video src="../uploads/horse.mp4" autoplay="autoplay" class="img-responsive" onclick="displayDetail(7)" id="picture7">
+                                    </div>
+                                    <div class="img-responsive0" id="img-responsive8" style="display: block">
+                                        <img src="../img/icon.png" class="img-responsive" onclick="displayDetail(8)" id="picture8">
+                                    </div>
+                                    <div class="img-responsive0" id="img-responsive9" style="display: block">
+                                        <img src="../img/horse.jpg" class="img-responsive" onclick="displayDetail(9)" id="picture9">
+                                    </div>
+                                </div>
+
+                                <span class="glyphicon glyphicon-menu-down" onclick="turnBottom()"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div style="background-color: rgb(247, 243, 243); padding-left:10px; padding-right:10px;">
+            <br/>
+            <h2 class="text-center">详细信息</h2>
+            <br/>
+            <table class="table detailInfo">
+                <tr>
+                    <td class="name">名称</td>
+                    <td class="value">佛里斯兰</td>
+                </tr>
+                <tr>
+                    <td class="name">年龄</td>
+                    <td class="value">3岁半</td>
+                </tr>
+                <tr>
+                    <td class="name">特长</td>
+                    <td class="value">选美、展示、轻驾车、双架马车、动作状态非常完美</td>
+                </tr>
+                <tr>
+                    <td class="name">血统</td>
+                    <td class="value">有血统证书</td>
+                </tr>
+                <tr>
+                    <td class="name">健康状况</td>
+                    <td class="value">有健康检查报告</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+
+    <!-- 注册模态框 -->
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" style="width: 22%">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form role="form" id="signupForm">
+                        <div class="form-group">
+                            <label for="name">登录名</label>
+                            <input class="form-control sigup-form" type="text" id="username" name="username" placeholder="请输入您的登录密码" style="height: 45px">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">初始密码</label>
+                            <input type="password" class="form-control sigup-form" id="password" name="password" placeholder="请输入您的密码" style="height: 45px">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">确认密码</label>
+                            <input type="password" class="form-control sigup-form" id="repeatPassword" name="repeatPassword" placeholder="请确认您的密码" style="height: 45px">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">手机号码</label>
+                            <input type="tel" class="form-control sigup-form" id="tel" name="tel" placeholder="请输入您的手机号码" style="height: 45px">
+                        </div>
+                        <div class="form-group" style="height: 45px">
+                            <button type="submit" class="btn btn-success btn-lg btn-block">注册</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 登录模态框 -->
+    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" style="width: 22%">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form role="form" id="signinForm">
+                        <div class="form-group">
+                            <label for="name">登录名</label>
+                            <input class="form-control sigup-form" type="text" id="username" name="username" placeholder="请输入您的登录密码" style="height: 45px">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">密码</label>
+                            <input type="password" class="form-control sigup-form" id="password" name="password" placeholder="请输入您的密码" style="height: 45px">
+                        </div>
+                        <p id="addPromote" style="display:none; color: red;"></p>
+                        <div class="form-group" style="height: 45px">
+                            <button type="button" class="btn btn-success btn-lg btn-block" onclick="signin()">登录</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 联系信息模态框 -->
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" style="text-align: center;">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    <p>更多详情请联系：
+                        <span style="color: red">13254656545</span>(同微信)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/lib/jquery-3.3.1.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <script src="../js/lib/jquery.validate.js"></script>
+    <script src="../js/lib/jquery.cookie.js"></script>
+    <script src="../js/user/signup.js"></script>
+    <script src="../js/user/signin.js"></script>
+    <script src="../js/init-load.js"></script>
+    <script src="../js/user/signout.js"></script>
+    <script src="../js/detail/carousel.js"></script>
+    <script src="../js/horse/detail-display.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#carousel").carousel('cycle');
+            $("span.glyphicon-menu-down").click(function () {
+                $("#carousel").carousel('next');
+            });
+            $("span.glyphicon-menu-up").click(function () {
+                $("#carousel").carousel('prev');
+            });
+
+        });
+    </script>
+</body>
+
+</html>
