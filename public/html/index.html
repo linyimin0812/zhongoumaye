@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>中欧马业</title>
+    <link href="../css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link rel="icon" href="../img/home.ico" type="image/x-ico" />
+
+    <style>
+        .error {
+            color: red;
+        }
+
+        .pictureDisplay:hover {
+            opacity: 0.6;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">中欧马业</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a class="contact" data-toggle="modal" data-target="#contactModal">联系人</a>
+                        </li>
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">种类
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Action</a>
+                                </li>
+                                <li>
+                                    <a href="#">Another action</a>
+                                </li>
+                                <li>
+                                    <a href="#">Something else here</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a href="#">Separated link</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a href="#">One more separated link</a>
+                                </li>
+                            </ul>
+                        </li> -->
+                    </ul>
+                </div>
+                <!-- <div style="text-align:center;display:inline">
+                    <form class="navbar-form navbar-left" id="searchdiv">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="马种类" style="display:inline;">
+                            <button type="submit" class="btn btn-default">查询</button>
+                        </div>
+                    </form>
+                </div> -->
+                <div>
+                    <ul class="nav navbar-nav navbar-right" id="isSignin" style="display:inline">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#signinModal">登录</a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#signupModal">注册</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" id="isSignout" style="display:none">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="welcom">你好</button>
+                            <div class="dropdown-content">
+                                <a onclick="signout()">退出</a>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron text-center">
+        <div class="container">
+            <h4>欢迎来到中欧马业!</h4>
+            <p>
+                <small>中国最专业最透明最放心的马匹交易平台</small>
+            </p>
+            <a href="#" class="btn btn-primary btn-xs">查看更多</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <a onclick="displayPicture(1)">
+                    <img src="../img/horse.jpg" class="img-responsive pictureDisplay" id="display1">
+                </a>
+                <p>花样骑术马匹</p>
+                <p>年龄:7</p>
+                <p class="price" style="display:none">价格:>=25.000</p>
+                <p>
+                    花样骑术马匹
+                    <a href="./more-info.html" class="btn btn-primary btn-xs btn-info pull-right">查看更多 >></a>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <a onclick="displayPicture(2)">
+                    <img src="../img/horse.jpg" class="img-responsive pictureDisplay" id="display2">
+                </a>
+                <p>花样骑术马匹</p>
+                <p>年龄:7</p>
+                <p class="price" style="display:none">价格:>=25.000</p>
+                <p>
+                    花样骑术马匹
+                    <a href="./more-info.html" class="btn btn-primary btn-xs btn-info pull-right">查看更多 >></a>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <a onclick="displayPicture(3)">
+                    <img src="../img/horse.jpg" class="img-responsive pictureDisplay" id="display3">
+                </a>
+                <p>花样骑术马匹</p>
+                <p>年龄:7</p>
+                <p class="price" style="display:none">价格:>=25.000</p>
+                <p>
+                    花样骑术马匹
+                    <a href="./more-info.html" class="btn btn-primary btn-xs btn-info pull-right">查看更多 >></a>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <a onclick="displayPicture(4)">
+                    <img src="../img/horse.jpg" class="img-responsive pictureDisplay" id="display4">
+                </a>
+                <p>花样骑术马匹</p>
+                <p>年龄:7</p>
+                <p class="price" style="display:none">价格:>=25.000</p>
+                <p>
+                    花样骑术马匹
+                    <a href="./more-info.html" class="btn btn-primary btn-xs btn-info pull-right">查看更多 >></a>
+                </p>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-3">
+                <a onclick="displayPicture(5)">
+                    <img src="../img/horse.jpg" class="img-responsive pictureDisplay" id="display5">
+                </a>
+                <p>花样骑术马匹</p>
+                <p>年龄:7</p>
+                <p class="price" style="display:none">价格:>=25.000</p>
+                <p>
+                    花样骑术马匹
+                    <a href="./more-info.html" class="btn btn-primary btn-xs btn-info pull-right">查看更多 >></a>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <a onclick="displayPicture(6)">
+                    <img src="../img/horse.jpg" class="img-responsive pictureDisplay" id="display6">
+                </a>
+                <p>花样骑术马匹</p>
+                <p>年龄:7</p>
+                <p class="price" style="display:none">价格:>=25.000</p>
+                <p>
+                    花样骑术马匹
+                    <a href="./more-info.html" class="btn btn-primary btn-xs btn-info pull-right">查看更多 >></a>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <a onclick="displayPicture(7)">
+                    <img src="../img/horse.jpg" class="img-responsive pictureDisplay" id="display7">
+                </a>
+                <p>花样骑术马匹</p>
+                <p>年龄:7</p>
+                <p class="price" style="display:none">价格:>=25.000</p>
+                <p>
+                    花样骑术马匹
+                    <a href="./more-info.html" class="btn btn-primary btn-xs btn-info pull-right">查看更多 >></a>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <a onclick="displayPicture(8)">
+                    <img src="../img/horse.jpg" class="img-responsive pictureDisplay" id="display8">
+                </a>
+                <p>花样骑术马匹</p>
+                <p>年龄:7</p>
+                <p class="price" style="display:none">价格:>=25.000</p>
+                <p>
+                    花样骑术马匹
+                    <a href="./more-info.html" class="btn btn-primary btn-xs btn-info pull-right">查看更多 >></a>
+                </p>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-3">
+                <a onclick="displayPicture(9)">
+                    <img src="../img/horse.jpg" class="img-responsive pictureDisplay" id="display9">
+                </a>
+                <p>花样骑术马匹</p>
+                <p>年龄:7</p>
+                <p class="price" style="display:none">价格:>=25.000</p>
+                <p>
+                    花样骑术马匹
+                    <a href="./more-info.html" class="btn btn-primary btn-xs btn-info pull-right">查看更多 >></a>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <a onclick="displayPicture(10)">
+                    <img src="../img/horse.jpg" class="img-responsive pictureDisplay" id="display10">
+                </a>
+                <p>花样骑术马匹</p>
+                <p>年龄:7</p>
+                <p class="price" style="display:none">价格:>=25.000</p>
+                <p>
+                    花样骑术马匹
+                    <a href="./more-info.html" class="btn btn-primary btn-xs btn-info pull-right">查看更多 >></a>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <a onclick="displayPicture(11)">
+                    <img src="../img/horse.jpg" class="img-responsive pictureDisplay" id="display11">
+                </a>
+                <p>花样骑术马匹</p>
+                <p>年龄:7</p>
+                <p class="price" style="display:none">价格:>=25.000</p>
+                <p>
+                    花样骑术马匹
+                    <a href="./more-info.html" class="btn btn-primary btn-xs btn-info pull-right">查看更多 >></a>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <a onclick="displayPicture(12)">
+                    <img src="../img/horse.jpg" class="img-responsive pictureDisplay" id="display12">
+                </a>
+                <p>花样骑术马匹</p>
+                <p>年龄:7</p>
+                <p class="price" style="display:none">价格:>=25.000</p>
+                <p>
+                    花样骑术马匹
+                    <a href="./more-info.html" class="btn btn-primary btn-xs btn-info pull-right">查看更多 >></a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 注册模态框 -->
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" style="width: 22%">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form role="form" id="signupForm">
+                        <div class="form-group">
+                            <label for="name">登录名</label>
+                            <input class="form-control sigup-form" type="text" id="username" name="username" placeholder="请输入您的登录密码" style="height: 45px">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">初始密码</label>
+                            <input type="password" class="form-control sigup-form" id="password" name="password" placeholder="请输入您的密码" style="height: 45px">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">确认密码</label>
+                            <input type="password" class="form-control sigup-form" id="repeatPassword" name="repeatPassword" placeholder="请确认您的密码" style="height: 45px">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">手机号码</label>
+                            <input type="tel" class="form-control sigup-form" id="tel" name="tel" placeholder="请输入您的手机号码" style="height: 45px">
+                        </div>
+                        <div class="form-group" style="height: 45px">
+                            <button type="submit" class="btn btn-success btn-lg btn-block">注册</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 登录模态框 -->
+    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" style="width: 22%">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form role="form" id="signinForm">
+                        <div class="form-group">
+                            <label for="name">登录名</label>
+                            <input class="form-control sigup-form" type="text" id="username" name="username" placeholder="请输入您的登录密码" style="height: 45px">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">密码</label>
+                            <input type="password" class="form-control sigup-form" id="password" name="password" placeholder="请输入您的密码" style="height: 45px">
+                        </div>
+                        <p id="addPromote" style="display:none; color: red;"></p>
+                        <div class="form-group" style="height: 45px">
+                            <button type="button" class="btn btn-success btn-lg btn-block" onclick="signin()">登录</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br/>
+    <br/>
+    <br/>
+    <div class="container">
+        <ul class="list-inline" style="text-align: center">
+            <li>
+                <a href="#" class="btn btn-primary">&lt;上一页</a>
+            </li>
+            <li>
+                <a href="#" class="btn btn-default">1</a>
+            </li>
+            <li>
+                <a href="#" class="btn btn-default">2</a>
+            </li>
+            <li>
+                <a href="#" class="btn btn-default">3</a>
+            </li>
+            <li>
+                <a href="#" class="btn btn-default">4</a>
+            </li>
+            <li>
+                <a href="#" class="btn btn-default">5</a>
+            </li>
+            <li>
+                <a href="#" class="btn btn-primary">下一页&gt;</a>
+            </li>
+            <li>一共100页,跳到</li>
+            <li>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-sm" size="2"> &nbsp;页&nbsp;
+                        <button type="submit" class="btn btn-primary btn-sm">查询</button>
+                    </div>
+                </form>
+            </li>
+        </ul>
+    </div>
+    <br/>
+    <br/>
+
+    <!-- 图片模态框 -->
+    <div class="modal fade" id="pictureModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" style="text-align: center;">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    </br>
+                    </br>
+                    <img src="../img/horse.jpg" id="modalPicture" style="margin: 0 auto;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 联系信息模态框 -->
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" style="text-align: center;">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    <p>更多详情请联系：
+                        <span style="color: red">13254656545</span>(同微信)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/lib/jquery-3.3.1.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <script src="../js/lib/jquery.validate.js"></script>
+    <script src="../js/lib/jquery.cookie.js"></script>
+    <script src="../js/user/signup.js"></script>
+    <script src="../js/user/signin.js"></script>
+    <script src="../js/init-load.js"></script>
+    <script src="../js/user/signout.js"></script>
+    <script src="../js/horse/modal-display.js"></script>
+    <script>
+        function loadCSS() {
+            if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|wOSBrowser|BrowserNG|WebOS)/i))) {
+                // 适配手机屏幕
+            }
+            else {
+                // 适配电脑屏幕
+                document.getElementById("searchdiv").style.marginLeft = "25%";
+            }
+        }
+        loadCSS();
+    </script>
+</body>
+
+</html>
