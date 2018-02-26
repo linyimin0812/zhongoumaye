@@ -13,7 +13,7 @@
         .glyphicon {
             cursor: pointer;
             border-radius: 2px;
-            border: 2px;
+            
             background-color: grey;
             width: 100%
         }
@@ -129,46 +129,47 @@
                     </table>
                 </div>
             </div>
-            <div class="col-md-2 text-center" style="margin: auto;">
-                <div style="border-radius:10px;border:2px solid black;">
-                    <table>
-                        <tr>
-                            <td>
-                                <span class="glyphicon glyphicon-menu-up" onclick="turnUp()" aria-hidden="true"></span>
-                                <div class="item">
-                                    <div class="img-responsive0" id="img-responsive1" style="display: none">
-                                        <img src="../img/horse.jpg" class="img-responsive" onclick="displayDetail(1)" id="picture1">
+            <div class="col-md-2 text-center">
+                <div style="border-radius:10px;border:2px solid black;width:100%;height:100%;">
+                    <p class="glyphicon glyphicon-menu-up" onclick="turnUp()" aria-hidden="true"></p>
+                    <div style="width:100%; height:91%">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="item">
+                                        <div class="img-responsive0" id="img-responsive1" style="display: none">
+                                            <img src="../img/horse.jpg" class="img-responsive" onclick="displayDetail(1)" id="picture1">
+                                        </div>
+                                        <div class="img-responsive0" id="img-responsive2" style="display: none">
+                                            <img src="../img/icon.png" class="img-responsive" onclick="displayDetail(2)" id="picture2">
+                                        </div>
+                                        <div class="img-responsive0" id="img-responsive3" style="display: none">
+                                            <img src="../img/horse.jpg" class="img-responsive" onclick="displayDetail(3)" id="picture3">
+                                        </div>
+                                        <div class="img-responsive0" id="img-responsive4" style="display: none">
+                                            <img src="../img/icon.png" class="img-responsive" onclick="displayDetail(4)" id="picture4">
+                                        </div>
+                                        <div class="img-responsive0" id="img-responsive5" style="display: none">
+                                            <img src="../img/horse.jpg" class="img-responsive" onclick="displayDetail(5)" id="picture5">
+                                        </div>
+                                        <div class="img-responsive0" id="img-responsive6" style="display: none">
+                                            <img src="../img/icon.png" class="img-responsive" onclick="displayDetail(6)" id="picture6">
+                                        </div>
+                                        <div class="img-responsive0" id="img-responsive7" style="display: block">
+                                            <video src="../uploads/horse.mp4" autoplay="autoplay" class="img-responsive" onclick="displayDetail(7)" id="picture7">
+                                        </div>
+                                        <div class="img-responsive0" id="img-responsive8" style="display: block">
+                                            <img src="../img/icon.png" class="img-responsive" onclick="displayDetail(8)" id="picture8">
+                                        </div>
+                                        <div class="img-responsive0" id="img-responsive9" style="display: block">
+                                            <img src="../img/horse.jpg" class="img-responsive" onclick="displayDetail(9)" id="picture9">
+                                        </div>
                                     </div>
-                                    <div class="img-responsive0" id="img-responsive2" style="display: none">
-                                        <img src="../img/icon.png" class="img-responsive" onclick="displayDetail(2)" id="picture2">
-                                    </div>
-                                    <div class="img-responsive0" id="img-responsive3" style="display: none">
-                                        <img src="../img/horse.jpg" class="img-responsive" onclick="displayDetail(3)" id="picture3">
-                                    </div>
-                                    <div class="img-responsive0" id="img-responsive4" style="display: none">
-                                        <img src="../img/icon.png" class="img-responsive" onclick="displayDetail(4)" id="picture4">
-                                    </div>
-                                    <div class="img-responsive0" id="img-responsive5" style="display: none">
-                                        <img src="../img/horse.jpg" class="img-responsive" onclick="displayDetail(5)" id="picture5">
-                                    </div>
-                                    <div class="img-responsive0" id="img-responsive6" style="display: none">
-                                        <img src="../img/icon.png" class="img-responsive" onclick="displayDetail(6)" id="picture6">
-                                    </div>
-                                    <div class="img-responsive0" id="img-responsive7" style="display: block">
-                                        <video src="../uploads/horse.mp4" autoplay="autoplay" class="img-responsive" onclick="displayDetail(7)" id="picture7">
-                                    </div>
-                                    <div class="img-responsive0" id="img-responsive8" style="display: block">
-                                        <img src="../img/icon.png" class="img-responsive" onclick="displayDetail(8)" id="picture8">
-                                    </div>
-                                    <div class="img-responsive0" id="img-responsive9" style="display: block">
-                                        <img src="../img/horse.jpg" class="img-responsive" onclick="displayDetail(9)" id="picture9">
-                                    </div>
-                                </div>
-
-                                <span class="glyphicon glyphicon-menu-down" onclick="turnBottom()"></span>
-                            </td>
-                        </tr>
-                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p class="glyphicon glyphicon-menu-down" onclick="turnBottom()"></p>
                 </div>
             </div>
         </div>
